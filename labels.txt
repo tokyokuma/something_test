@@ -1,0 +1,11 @@
+bambu_pole  0   0   0
+iron_pole   1   1   0
+wood        2   2   1
+npeltatum       3   2
+lotus       3   4   3
+chestnuta       5   4
+sky         4   6   5
+person      5   7   6
+boat        6   8   7
+road_mark       9   8
+water_sur   7   10  9
