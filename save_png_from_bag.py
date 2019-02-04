@@ -33,17 +33,27 @@ def main():
     bag = rosbag.Bag(args.bag_file, "r")
     bridge = CvBridge()
     count = int(args.image_number)
+    '''
     for topic, msg, t in bag.read_messages(topics=[args.image_topic]):
         if count % 10 == 0:
             file_num = count / 10
             cv_img = bridge.imgmsg_to_cv2(msg, desired_encoding="passthrough")
             cv_img = cv2.cvtColor(cv_img, cv2.COLOR_BGR2RGB)
-            #cv2.imwrite(os.path.join(args.output_dir, "frame%06i.png" % file_num), cv_img)
-            cv2.imwrite(os.path.join(args.output_dir, "%08i.png" % file_num), cv_img)
+            cv2.imwrite(os.path.join(args.output_dir, "frame%06i.png" % file_num), cv_img)
+            #cv2.imwrite(os.path.join(args.output_dir, "%08i.png" % file_num), cv_img)
             print "Wrote image %i" % file_num
         else:
             pass
 
+        count += 1
+    '''
+
+    for topic, msg, t in bag.read_messages(topics=[args.image_topic]):
+        cv_img = bridge.imgmsg_to_cv2(msg, desired_encoding="passthrough")
+        #cv_img = cv2.cvtColor(cv_img, cv2.COLOR_BGR2RGB)
+        cv2.imwrite(os.path.join(args.output_dir, "frame%06i.png" % count), cv_img)
+        #cv2.imwrite(os.path.join(args.output_dir, "%08i.png" % file_num), cv_img)
+        print "Wrote image %i" % count
         count += 1
 
     bag.close()

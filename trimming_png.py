@@ -3,7 +3,7 @@ import cv2
 import numpy as np
 
 #src_dir = glob.glob('/home/kuma/something_test/dataset_izunuma/images/20180808/kinect_color_depth_sd_01.bag/qhd_color/*.png')
-src_dir = glob.glob('/home/kuma/something_test/dataset_izunuma/izunuma_dataset1/asaza_gagabuta_half/*.png')
+src_dir = glob.glob('/home/kuma/something_test/dataset_izunuma/izunuma_dataset1/asaza_gagabuta/*.png')
 
 for file in src_dir:
     print file + "trimming"

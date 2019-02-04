@@ -1,0 +1,10 @@
+pole
+wood
+npeltata
+lotus
+wcaltrop
+sky
+person
+boat
+float
+water
